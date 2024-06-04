@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
   return (
-    <footer className="footer bg-light text-center py-3">
-      <p>© 2024 Manualidades. Todos los derechos reservados.</p>
+    <footer className="footer text-center py-3">
+      <p className='p1'>© 2024 Epic Escape. Todos los derechos reservados.Stefany Albarrán</p>
     </footer>
   );
 };

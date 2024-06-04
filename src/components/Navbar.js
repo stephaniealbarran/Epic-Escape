@@ -1,27 +1,41 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
 
 const Navbar = () => {
-  return (
-    <div>
-      <nav>
-        <input type="checkbox" id="check" />
-        <label htmlFor="check" className="checkbtn">
-          <FontAwesomeIcon icon={faBars} />
-        </label>
-        <label className="logo">HomeStyle</label>
-        <ul>
-          <li><a href="#" className="active">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Feedback</a></li>
-        </ul>
-      </nav>
-      <div className="main"></div>
-    </div>
-  );
+    // State to manage if the navbar is collapsed or not
+    const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+    // Function to toggle navbar collapse
+    const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
+    return (
+        <nav className="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+            <div className="container">
+                <a className="navbar-brand js-scroll" href="#page-top">Epic Escape</a>
+                <button className="navbar-toggler collapsed" type="button" 
+                        onClick={handleNavCollapse} 
+                        aria-controls="navbarDefault" 
+                        aria-expanded={!isNavCollapsed} 
+                        aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div className={`navbar-collapse ${isNavCollapsed ? 'collapse' : ''} justify-content-end`} id="navbarDefault">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <a className="nav-link js-scroll active" href="#home">Home</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link js-scroll" href="#destinations">Destinations</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link js-scroll" href="#Blog">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    );
 };
 
 export default Navbar;

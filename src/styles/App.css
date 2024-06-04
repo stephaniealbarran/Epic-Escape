@@ -1,13 +1,20 @@
+.lora {
+	font-family: "Lora", serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+  }
+
 .footer {
-	position: fixed;
+	background-color: #221f1fcc;
 	width: 100%;
 	bottom: 0;
+	margin-top: 50px;
   }
   
   body, html, #root {
 	height: 100%;
 	margin: 0;
-	font-family: Arial, sans-serif;
+	font-family: "Lora", serif;
   }
   
   div {
@@ -16,7 +23,7 @@
   
   html {
 	box-sizing: border-box;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Lora", serif;
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
@@ -30,12 +37,15 @@
 	font-family: inherit;
   }
   
+
   body {
-	color: #f0f0f0;
-	background: #101522;
+	color: #a8a8a899;
+	background: #ffffff5a;
 	background-blend-mode: hard-light;
-	background-image: radial-gradient(circle at 20% 20%, #ffcc7066 10%, #ffcc7000 50%), radial-gradient(circle at 80% 80%, #0033ff66 10%, #0033ff00 50%),
-	  radial-gradient(ellipse at 35% 70%, #00ff4866 10%, #00ff4800 50%), radial-gradient(ellipse at 70% 35%, #ff005d66 10%, #ff005d00 60%);
+	background-image: radial-gradient(circle at 20% 20%, rgba(241, 229, 209, 0.4) 10%, rgba(241, 229, 209, 0.0) 50%),
+					  radial-gradient(circle at 80% 80%, rgba(219, 181, 181, 0.4) 10%, rgba(219, 181, 181, 0.0) 50%),
+					  radial-gradient(ellipse at 35% 70%, rgba(195, 152, 152, 0.4) 10%, rgba(195, 152, 152, 0.0) 50%),
+					  radial-gradient(ellipse at 70% 35%, rgba(152, 112, 112, 0.4) 10%, rgba(152, 112, 112, 0.0) 60%);
 	background-size: 250% 250%;
 	animation: background-animation 30s infinite;
   }
@@ -70,6 +80,7 @@
 	z-index: -1;
   }
   
+  
   .card-container {
 	display: flex;
 	justify-content: space-around;
@@ -91,10 +102,9 @@
 	margin: 10px; /* Añadimos margen entre tarjetas */
   }
   
-  /*checkbox*/
-  input[type="checkbox"] {
-	display: none;
-  }
+  .header-color {
+    color: #302c2c; /* Color oscuro para el texto del encabezado */
+}
   
   /*label left-side*/
   label.card-toggle-label {
@@ -187,16 +197,28 @@
   }
   
   #card-1 .card-image {
-	background-image: url(https://static.zarahome.net/8/photos4/2024/V/4/1/p/8329/073/052/8329073052_2_7_2.jpg?t=1715263989511&imwidth=682&w=682&imformat=chrome);
+	background-image: url(https://www.travelawaits.com/wp-content/uploads/2021/04/8bc0f2eae5936cbcc5142f867c4fd8bc0f2-scaled.jpg);
   }
   
   #card-2 .card-image {
-	background-image: url(https://d.media.kavehome.com/image/upload/w_1900,f_auto/v1709221162/ambiences/A000002155_1.jpg);
+	background-image: url(https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iM.Sc9dD.RMQ/v2/-1x-1.jpg);
   }
   
   #card-3 .card-image {
-	background-image: url(https://d.media.kavehome.com/image/upload/w_1900,f_auto/v1709217418/ambiences/A000001879_1.jpg);
+	background-image: url(https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/max_1300x1300/public/fotos/japon_tokio_montefuji_shutterstock_756354574_sean_pavone_shutterstock.jpg?itok=3nrPOQvT);
   }
+  #card-4 .card-image {
+	background-image: url(https://elviajerofeliz.com/wp-content/uploads/2020/04/10-Ciudades-de-Italia.-Imprescindibles.jpg);
+  }
+  
+  #card-5 .card-image {
+	background-image: url(https://wp.growproexperience.com/wp-content/uploads/2022/06/Safaris-en-Suda%CC%81frica.jpg);
+  }
+  
+  #card-6 .card-image {
+	background-image: url(https://www.noruegatours.com/wp-content/uploads/2022/11/cosas-tipicas-de-noruega-3.jpeg);
+  }
+  
   
   .card:hover .card-image {
 	opacity: 1;
@@ -287,11 +309,14 @@
   .card-content.left-content h3,
   .card-content.left-content p {
 	margin-right: 30%;
+	color: whitesmoke;
   }
   
   .card-content.right-content h3,
   .card-content.right-content p {
+	margin-right: 2%;
 	margin-left: 30%;
+	color: whitesmoke;
   }
   
   /*card-content left-side*/
@@ -357,9 +382,6 @@
 	background-color: #ffcc7033;
   }
   
-  /*-------------------------*/
-  /*    open card section    */
-  /*-------------------------*/
   
   /*label open card*/
   label.open-card-label {
@@ -422,7 +444,7 @@
   }
   
   input.open-card:checked + label.open-card-label::before {
-	content: "OPEN";
+	content: attr(data-open-label);
 	width: 90px;
 	height: 90px;
 	text-align: center;
@@ -454,11 +476,12 @@
 	opacity: 1;
   }
   
-  /*card-header open-card*/
+  /*card-header open-card
   input.open-card:checked ~ .card-header {
 	opacity: 0;
 	top: -100px;
   }
+  */
   
   /*card-content open-card*/
   input.open-card:checked ~ .card-content {
@@ -481,3 +504,10 @@
 	bottom: -100px;
   }
   
+  p{
+color: #000000;
+  }
+
+  .p1{
+	color: white;
+  }
