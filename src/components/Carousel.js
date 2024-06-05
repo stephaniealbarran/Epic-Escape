@@ -1,24 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
-const Carousel = () => {
+const Carousel = React.memo(() => {
     const [postIndex, setPostIndex] = useState(0);
     const [progress, setProgress] = useState(0);
+    const slides = [
+        { title: 'Puerto Rico: Vibrant Caribbean Charm', image: require('../assets/carolina.jpg') },
+        { title: 'Japan: Tradition Meets Tomorrow', image: require('../assets/Tokio.jpg') },
+        { title: 'Perú: Land of Ancient Wonders', image: require('../assets/Peru.jpg') }
+    ];
+
+    // Función para avanzar al siguiente slide o reiniciar
+    const advanceSlide = useCallback(() => {
+        setPostIndex(prevIndex => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
+        setProgress(0);
+    }, [slides.length]);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setProgress((oldProgress) => {
-                if (oldProgress === 100) {
-                    setPostIndex((oldPostIndex) => oldPostIndex === 2 ? 0 : oldPostIndex + 1);
-                    return 0;
-                }
-                return oldProgress + 1;
-            });
-        }, 100); // 180
+        let frame;
+        let start;
 
-        return () => {
-            clearInterval(interval);
+        const animateProgress = (timestamp) => {
+            if (!start) start = timestamp;
+            const runtime = timestamp - start;
+            const relativeProgress = Math.min(runtime / 10000, 1);
+
+            setProgress(relativeProgress * 100);
+
+            if (relativeProgress < 1) {
+                frame = requestAnimationFrame(animateProgress);
+            } else {
+                advanceSlide();
+                start = null;
+                frame = requestAnimationFrame(animateProgress);
+            }
         };
-    }, []);
+
+        frame = requestAnimationFrame(animateProgress);
+        return () => cancelAnimationFrame(frame);
+    }, [advanceSlide]);
 
     return (
         <div className="carousel">
@@ -27,11 +46,7 @@ const Carousel = () => {
             </div>
             <header className="main-post-wrapper">
                 <div className="slides">
-                    {[
-                        { title: 'Puerto Rico', media: require('../assets/PR.mp4') },
-                        { title: 'Discover Tokio', image: require('../assets/Tokio.jpg') },
-                        { title: 'Perú', image: require('../assets/Peru.jpg') }
-                    ].map((post, index) => (
+                    {slides.map((post, index) => (
                         <article
                             key={index}
                             className={`main-post ${postIndex === index ? 'main-post--active' : 'main-post--not-active'}`}
@@ -70,6 +85,6 @@ const Carousel = () => {
             </header>
         </div>
     );
-};
+});
 
 export default Carousel;

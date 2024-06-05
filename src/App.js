@@ -12,7 +12,7 @@ import './styles/Carousel.scss';
 import './styles/CardSlider.css';
 import './styles/Faq.css';
 import BlogCard from './components/BlogCard';
-import Card from './components/Card';
+
 
 
 

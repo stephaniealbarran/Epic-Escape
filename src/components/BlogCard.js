@@ -26,7 +26,7 @@ const Container = () => {
   return (
     <div className="container1">
       <div className="text-center header-color">
-        <h1 id="Blog">Welcome to Our Blog</h1>
+        <h1 id="Blog">Latest Travel Updates</h1>
         <p>Discover the latest updates and insights on various topics right here.</p>
       </div>
       <Card

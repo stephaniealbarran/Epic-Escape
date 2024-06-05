@@ -37,7 +37,7 @@ const App = () => (
       rightContent={{ title: "Rainbow Mountain", text1: "Visit Rainbow Mountain, Vinicunca, known for its striking, naturally colorful sandstone layers, a result of mineral deposits.", text2: "A challenging hike leads to this stunning site where the mountain's vibrant stripes offer." }}
       footerLink={{ url: "#more", text: "Explore Peru" }} />
 
-    <Card id="2" header="Island Beauty" openLabel="Puerto Rico"
+    <Card id="2" header="Island of Enchantment" openLabel="Puerto Rico"
       leftContent={{ title: "El Yunque", text1: "Explore El Yunque, the only tropical rainforest in the U.S. National Forest System. Located in the heart of Puerto Rico.", text2: "Enjoy hiking through vibrant green landscapes, encountering stunning waterfalls and the melodious sounds of the native coquí frogs." }}
       rightContent={{ title: "Old San Juan", text1: "Wander the cobblestone streets of Old San Juan, where history resonates at every turn through its Spanish colonial architecture.", text2: "This historic district is celebrated for its colorful buildings and warm hospitality, making it a pulsating heart of Puerto Rican culture." }}
       footerLink={{ url: "#more", text: "Discover Puerto Rico" }} />
