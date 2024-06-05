@@ -62,21 +62,8 @@ const Carousel = React.memo(() => {
                             </div>
                             <div className="main-post__content">
                                 <h1 className="main-post__title">{post.title}</h1>
-                                <a className="main-post__link" href="#">
-                                    <span className="main-post__link-text">find out more</span>
-                                    <svg
-                                        className="main-post__link-icon main-post__link-icon--arrow"
-                                        width="37"
-                                        height="12"
-                                        viewBox="0 0 37 12"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M0 6H36.0001M36.0001 6L31.0001 1M36.0001 6L31.0001 11"
-                                            stroke="white"
-                                        />
-                                    </svg>
+                                <a className="main-post__link" >
+                                    <span className="main-post__link-text">Discover More Below ↓</span>
                                 </a>
                             </div>
                         </article>

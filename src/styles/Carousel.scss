@@ -83,13 +83,14 @@
   }
   &__link {
     text-decoration: none;
-    color: #fff;
+    color: #fffef1;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     display: inline-flex;
     align-items: center;
     &-text {
-      font-size: 0.9em;
+      font-size: 1.6em;
+      font-family:'Times New Roman', Times, serif;
     }
     &-icon {
       &--arrow {
