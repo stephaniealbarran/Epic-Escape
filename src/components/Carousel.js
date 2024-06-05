@@ -1,17 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import carolinaImage from '../assets/carolina.jpg';
+import tokioImage from '../assets/Tokio.jpg';
+import peruImage from '../assets/Peru.jpg';
 
 const Carousel = React.memo(() => {
     const [postIndex, setPostIndex] = useState(0);
     const [progress, setProgress] = useState(0);
     const slides = [
-        { title: 'Puerto Rico: Vibrant Caribbean Charm', image: require('../assets/carolina.jpg') },
-        { title: 'Japan: Tradition Meets Tomorrow', image: require('../assets/Tokio.jpg') },
-        { title: 'Perú: Land of Ancient Wonders', image: require('../assets/Peru.jpg') }
+        { title: 'Puerto Rico: Vibrant Caribbean Charm', image: carolinaImage },
+        { title: 'Japan: Tradition Meets Tomorrow', image: tokioImage },
+        { title: 'Perú: Land of Ancient Wonders', image: peruImage }
     ];
 
-    // Función para avanzar al siguiente slide o reiniciar
     const advanceSlide = useCallback(() => {
-        setPostIndex(prevIndex => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
+        setPostIndex(prevIndex => (prevIndex + 1) % slides.length); 
         setProgress(0);
     }, [slides.length]);
 
@@ -30,13 +32,15 @@ const Carousel = React.memo(() => {
                 frame = requestAnimationFrame(animateProgress);
             } else {
                 advanceSlide();
-                start = null;
+                start = null; 
                 frame = requestAnimationFrame(animateProgress);
             }
         };
 
         frame = requestAnimationFrame(animateProgress);
-        return () => cancelAnimationFrame(frame);
+        return () => {
+            cancelAnimationFrame(frame);
+        };
     }, [advanceSlide]);
 
     return (
@@ -46,23 +50,17 @@ const Carousel = React.memo(() => {
             </div>
             <header className="main-post-wrapper">
                 <div className="slides">
-                    {slides.map((post, index) => (
+                    {slides.map((slide, index) => (
                         <article
-                            key={index}
+                            key={slide.title}  // Usando title como key por ser único en este caso
                             className={`main-post ${postIndex === index ? 'main-post--active' : 'main-post--not-active'}`}
                         >
                             <div className="main-post__image">
-                                {post.media ? (
-                                    <video autoPlay loop muted>
-                                        <source src={post.media} type="video/mp4" />
-                                    </video>
-                                ) : (
-                                    <img src={post.image} alt={post.title} />
-                                )}
+                                <img src={slide.image} alt={slide.title} />
                             </div>
                             <div className="main-post__content">
-                                <h1 className="main-post__title">{post.title}</h1>
-                                <a className="main-post__link" >
+                                <h1 className="main-post__title">{slide.title}</h1>
+                                <a className="main-post__link" href="#discover">
                                     <span className="main-post__link-text">Discover More Below ↓</span>
                                 </a>
                             </div>
