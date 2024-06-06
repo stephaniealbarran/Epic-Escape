@@ -1,77 +1,86 @@
-
 details {
-    width: 75%;
-    min-height: 5px;
-    max-width: 700px;
-    padding: 45px 70px 45px 45px;
-    margin: 0 auto;
-    position: relative;
-    font-size: 22px;
-    border: 1px solid rgb(58 52 45 / 51%);
-    border-radius: 15px;
-    box-sizing: border-box;
-    transition: all .3s;
+  width: 100%; /* Usar 100% permite que el elemento se adapte al contenedor padre */
+  max-width: 700px; /* Se mantiene el ancho máximo para dispositivos más grandes */
+  padding: 3% 5% 3% 3%; /* Uso de porcentajes para el padding para mayor flexibilidad */
+  margin: 0 auto;
+  position: relative;
+  font-size: 1.375rem; /* Uso de rem para escalabilidad en diferentes dispositivos */
+  border: 1px solid rgba(58, 52, 45, 0.51);
+  border-radius: 15px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+details + details {
+  margin-top: 20px;
+}
+
+details[open] {
+  background-color: #f6f7f8;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+details p {
+  color: #242629;
+  font-weight: 300;
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  color: darkgoldenrod;
+}
+
+summary:focus {
+  outline: none;
+}
+
+summary:focus::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 5px rgb(53, 55, 62);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.control-icon {
+  fill: rgb(50, 58, 64);
+  transition: .3s ease;
+  pointer-events: none;
+}
+
+.control-icon-close {
+  display: none;
+}
+
+details[open] .control-icon-close {
+  display: initial;
+  transition: .3s ease;
+}
+
+details[open] .control-icon-expand {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  details {
+    font-size: 1rem; 
+    padding: 3% 4% 3% 3%; 
   }
-  
-  details + details {
-    margin-top: 20px;
-  }
-  
-  details[open] {
-    min-height: 50px;
-    background-color: #f6f7f8;
-    box-shadow: 2px 2px 20px rgba(0,0,0,.2);
-  }
-  
-  details p {
-    color: #242629;
-    font-weight: 300;
-  }
-  
+}
+
+@media (max-width: 480px) {
   summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 500;
-    cursor: pointer;
-    color: darkgoldenrod;
+    font-size: 0.875rem; 
   }
-  
-  summary:focus {
-    outline: none;
-    
-  }
-  
-  summary:focus::after {
-    content: "";
-    height: 100%;
-    width: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 0 5px rgb(53, 55, 62);
-  }
-  
-  summary::-webkit-details-marker {
-    display: none
-  }
-  
-  .control-icon {
-    fill: rgb(50, 58, 64);
-    transition: .3s ease;
-    pointer-events: none;
-  }
-  
-  .control-icon-close {
-    display: none;
-  }
-  
-  details[open] .control-icon-close {
-    display: initial;
-    transition: .3s ease;
-  }
-  
-  details[open] .control-icon-expand {
-    display: none;
-  }
+}

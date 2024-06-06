@@ -85,15 +85,6 @@ img {
     margin-top: auto;
 }
 
-.user {
-    display: flex;
-    gap: .5rem;
-}
-
-.user__image {
-    border-radius: 50%;
-}
-
 .user__info > small {
     color: #666;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import carolinaImage from '../assets/carolina.jpg';
-import tokioImage from '../assets/Tokio.jpg';
-import peruImage from '../assets/Peru.jpg';
+import tokioImage from '../assets/Japon.jpg';
+import peruImage from '../assets/peru.jpg';
 
 const Carousel = React.memo(() => {
     const [postIndex, setPostIndex] = useState(0);
@@ -52,7 +52,7 @@ const Carousel = React.memo(() => {
                 <div className="slides">
                     {slides.map((slide, index) => (
                         <article
-                            key={slide.title}  // Usando title como key por ser único en este caso
+                            key={slide.title}  
                             className={`main-post ${postIndex === index ? 'main-post--active' : 'main-post--not-active'}`}
                         >
                             <div className="main-post__image">
@@ -60,9 +60,9 @@ const Carousel = React.memo(() => {
                             </div>
                             <div className="main-post__content">
                                 <h1 className="main-post__title">{slide.title}</h1>
-                                <a className="main-post__link" href="#discover">
+                                <p className="main-post__link">
                                     <span className="main-post__link-text">Discover More Below ↓</span>
-                                </a>
+                                </p>
                             </div>
                         </article>
                     ))}

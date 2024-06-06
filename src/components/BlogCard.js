@@ -35,7 +35,6 @@ const Container = () => {
         tagText="Technology"
         title="Leading Tech Frontiers: The World's Most Advanced Cities"
         description="Venture into the heart of innovation where cutting-edge technology seamlessly integrates into daily life. These cities not only pioneer advancements in tech but also redefine living standards, proving that the future is here and now. "
-        
         userName="Jane Doe"
         timeAgo="2h ago"
       />
@@ -45,7 +44,6 @@ const Container = () => {
         tagText="Food"
         title="Delicious Food"
         description="Exploring the symphony of flavors, each dish offers a unique journey into culinary artistry. From spicy to sweet, every bite is a discovery of refined tastes and fresh ingredients, meticulously crafted to delight your senses and inspire your palate."
-       
         userName="Jony Doe"
         timeAgo="Yesterday"
       />
@@ -55,7 +53,6 @@ const Container = () => {
         tagText="Automobile"
         title="Race to Your Heart's Content: Scenic Drives to Explore"
         description="Embark on a thrilling journey through some of the world’s most breathtaking landscapes. Behind the wheel, every turn brings a new discovery, from towering mountains to serene coastlines. Our curated routes are designed for those who crave adventure and the freedom of the open road. "
-        
         userName="John Doe"
         timeAgo="2d ago"
       />
