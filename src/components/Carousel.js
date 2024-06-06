@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import carolinaImage from '../assets/carolina.jpg';
 import tokioImage from '../assets/Japon.jpg';
-import peruImage from '../assets/peru.jpg';
+import peruImage from '../assets/Peru.jpg';
 
 const Carousel = React.memo(() => {
     const [postIndex, setPostIndex] = useState(0);
