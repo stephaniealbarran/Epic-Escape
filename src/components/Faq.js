@@ -42,7 +42,7 @@ const App = () => {
 
   return (
     <div>
-      <h2 className='text-center header-color mt-5 mb-5 '>Frequently Asked Questions</h2>
+      <h2 id="faq" className='text-center header-color mt-5 mb-5 '>Frequently Asked Questions</h2>
       {faqs.map((faq, index) => (
         <FAQ key={index} question={faq.question} answer={faq.answer} />
       ))}

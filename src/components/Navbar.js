@@ -19,6 +19,7 @@ const Navbar = () => {
                     
                     <span></span>
                     <span></span>
+                    <span></span>
                 </button>
                 <div className={`navbar-collapse ${isNavCollapsed ? 'collapse' : ''} justify-content-end`} id="navbarDefault">
                     <ul className="navbar-nav">
@@ -29,6 +30,9 @@ const Navbar = () => {
                         <li className="nav-item">
                             <a className="nav-link js-scroll" href="#Blog">Blog</a>
                         </li>
+                        <li className="nav-item">
+                            <a className="nav-link js-scroll" href="#faq">FAQ</a>
+                        </li>                                    
                     </ul>
                 </div>
             </div>
