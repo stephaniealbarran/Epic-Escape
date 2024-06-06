@@ -1,23 +1,14 @@
-import React, { useState } from 'react';
+import React  from 'react';
 
 const FAQ = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <details open={isOpen} onClick={() => setIsOpen(!isOpen)}>
+    <details>
       <summary>
         {question}
-        {isOpen ? (
-          <svg width="24" height="24">
-            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-            <path d="M0 0h24v24H0z" fill="none"/>
-          </svg>
-        ) : (
-          <svg width="24" height="24">
-            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
-            <path d="M0 0h24v24H0z" fill="none"/>
-          </svg>
-        )}
+        <svg width="24" height="24">
+          <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+          <path d="M0 0h24v24H0z" fill="none"/>
+        </svg>
       </summary>
       <p>{answer}</p>
     </details>
@@ -42,7 +33,7 @@ const App = () => {
 
   return (
     <div>
-      <h2 id="faq" className='text-center header-color mt-5 mb-5 '>Frequently Asked Questions</h2>
+      <h2 id="faq" className='text-center header-color mt-5 mb-5'>Frequently Asked Questions</h2>
       {faqs.map((faq, index) => (
         <FAQ key={index} question={faq.question} answer={faq.answer} />
       ))}
