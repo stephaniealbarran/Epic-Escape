@@ -1,0 +1,40 @@
+@charset 'UTF-8' ;
+
+:root {
+  --maxWidth : 1400px ;
+
+  --f_fontSize : 16px ;
+  --f_fontWeight : 400 ;
+  --f_fontStyle : normal ;
+  --f_lineHeight : 1.5 ;
+  --f_fontFamily : "Lora", serif ; 
+}
+
+html {
+  font-size: var(--f_fontSize) ;
+}
+
+p{
+  color: #000000;
+}
+
+* {
+  margin: 0 ;
+  padding: 0 ;
+	box-sizing: border-box;
+}
+
+.Body {
+  max-width: var(--maxWidth) ;
+  margin : 0 auto ;
+
+  font-size: clamp( 100% , 1rem + 0.75vw , 25px ) ;
+  font-weight: var(--f_fontWeight) ;
+  font-style: var(--f_fontStyle) ;
+  line-height: var(--f_lineHeight) ;
+	font-optical-sizing: auto;
+
+	font-family: var(--f_fontFamily) ;
+
+	background-color: #F5F5F5;
+}
