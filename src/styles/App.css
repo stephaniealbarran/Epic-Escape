@@ -5,37 +5,7 @@
 	bottom: 0;
 	margin-top: 50px;
   }
-  
-  body, html, #root {
-	height: 100%;
-	margin: 0;
-	font-family: "Lora", serif;
-  }
-  
-  div {
-	box-sizing: border-box;
-  }
-  
-  html {
-	box-sizing: border-box;
-	font-family: "Lora", serif;
-	font-optical-sizing: auto;
-	font-weight: 400;
-	font-style: normal;
-  }
-  
-  *, ::before, ::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: inherit;
-	font-weight: inherit;
-	font-family: inherit;
-  }
-  
 
-  body {
-	background-color: #F5F5F5;
-  }
   
   @keyframes background-animation {
 	0% {
@@ -88,7 +58,8 @@
 	background-color: #000000;
 	margin: 10px; 
   }
-  
+
+
   .header-color {
     color: #302c2c; 
 }
@@ -247,7 +218,7 @@
 	color: #f0f0f0f0;
 	font-weight: 700;
 	line-height: 0.8em;
-	font-size: 2em;
+	font-size: 1.5rem;
 	text-align: center;
   }
   
@@ -493,15 +464,7 @@
 	bottom: -100px;
   }
   
-  p{
-color: #000000;
-  }
 
   .p1{
 	color: white;
-  }
-  .lora {
-	font-family: "Lora", serif;
-	font-optical-sizing: auto;
-	font-style: normal;
   }
