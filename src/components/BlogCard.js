@@ -30,7 +30,7 @@ const Container = () => {
         <p>Discover the latest updates and insights on various topics right here.</p>
       </div>
       <Card
-        headerImage="https://source.unsplash.com/600x400/?computer"
+        headerImage="https://www.sydle.com/blog/assets/post/tecnologia-educativa-e-integracion-de-sistemas-63518d4d4037f13569393469/tecnologia-educacional-capa.png"
         tagColor="blue"
         tagText="Technology"
         title="Leading Tech Frontiers: The World's Most Advanced Cities"
@@ -39,7 +39,7 @@ const Container = () => {
         timeAgo="2h ago"
       />
       <Card
-        headerImage="https://source.unsplash.com/600x400/?food"
+        headerImage="https://st1.uvnimg.com/af/e1/34c8d9f843b4a2d51fcd42a691d1/comida-mexicana.jpg"
         tagColor="brown"
         tagText="Food"
         title="Delicious Food"
@@ -48,7 +48,7 @@ const Container = () => {
         timeAgo="Yesterday"
       />
       <Card
-        headerImage="https://source.unsplash.com/600x400/?car,automobile"
+        headerImage="https://www.autonocion.com/wp-content/uploads/2021/05/Rolls-Royce-Boat-Tail-Mother-of-Pearl-12-1130x612.jpg"
         tagColor="red"
         tagText="Automobile"
         title="Race to Your Heart's Content: Scenic Drives to Explore"
