@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
+
+import '../styles/Carousel.scss' ;
+
 import carolinaImage from '../assets/carolina.jpg';
 import tokioImage from '../assets/Japon.jpg';
 import peruImage from '../assets/Peru.jpg';
@@ -44,11 +47,11 @@ const Carousel = React.memo(() => {
     }, [advanceSlide]);
 
     return (
-        <div className="carousel">
+        <header className="Header carousel">
             <div className="progress-bar progress-bar--primary hide-on-desktop">
                 <div className="progress-bar__fill" style={{ width: `${progress}%` }}></div>
             </div>
-            <header className="main-post-wrapper">
+            <div className="main-post-wrapper">
                 <div className="slides">
                     {slides.map((slide, index) => (
                         <article
@@ -67,8 +70,8 @@ const Carousel = React.memo(() => {
                         </article>
                     ))}
                 </div>
-            </header>
-        </div>
+            </div>
+        </header>
     );
 });
 

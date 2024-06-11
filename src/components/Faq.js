@@ -1,5 +1,7 @@
 import React  from 'react';
 
+import '../styles/Faq.css' ;
+
 const FAQ = ({ question, answer }) => {
   return (
     <details>

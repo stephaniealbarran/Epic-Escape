@@ -1,470 +1,62 @@
 
-.footer {
-	background-color: #221f1fcc;
-	width: 100%;
-	bottom: 0;
-	margin-top: 50px;
-  }
-
-  
-  @keyframes background-animation {
-	0% {
-	  background-position: 5% 0%;
-	}
-	25% {
-	  background-position: 20% 80%;
-	}
-	50% {
-	  background-position: 96% 100%;
-	}
-	75% {
-	  background-position: 80% 10%;
-	}
-	100% {
-	  background-position: 5% 0%;
-	}
-  }
-  
-  body::after {
-	content: "";
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	backdrop-filter: blur(4px);
-	background: radial-gradient(ellipse, #00000000, #000000cc);
-	z-index: -1;
-  }
-  
-  
-  .card-container {
-	display: flex;
-	justify-content: space-around;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	width: 100%;
-	max-width: 1200px;
-	margin: 20px auto; 
-  }
-  
-  .card {
-	position: relative;
-	width: 300px;
-	height: 600px;
-	outline: 2px solid #ffffff66;
-	border-radius: 8px;
-	overflow: hidden;
-	background-color: #000000;
-	margin: 10px; 
-  }
-
-
-  .header-color {
-    color: #302c2c; 
+#root {
+  display : grid ;
+  grid : 64px 80vh auto 75vh / repeat( 12 , 1fr ) ;
 }
-  
-  /*label left-side*/
-  label.card-toggle-label {
-	display: block;
-	position: absolute;
-	z-index: 99;
-	width: 60px;
-	height: 60px;
-	top: 50%;
-	left: 83%;
-	transform: translate(-50%, -50%);
-	border-radius: 50%;
-	border: 1px solid #ffffff66;
-	background: #00000033;
-	backdrop-filter: blur(4px);
-	cursor: pointer;
-	transition: all 0.25s ease-in-out;
-  }
-  
-  label.card-toggle-label::after,
-  label.card-toggle-label::before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 30px;
-	height: 6px;
-	transform: translate(-40%, calc(-50% - 8px)) rotate(40deg);
-	border-radius: 3px;
-	background-color: #f0f0f099;
-	transition: all 0.5s ease-in-out;
-  }
-  
-  label.card-toggle-label::after {
-	transform: translate(-40%, calc(-50% + 8px)) rotate(-40deg);
-  }
-  
-  label.card-toggle-label:hover {
-	left: 85%;
-  }
-  
-  label.card-toggle-label:hover::after,
-  label.card-toggle-label:hover::before {
-	transform: translate(-40%, calc(-50% - 5px)) rotate(23deg);
-	background-color: #f0f0f0ff;
-  }
-  
-  label.card-toggle-label:hover::after {
-	transform: translate(-40%, calc(-50% + 5px)) rotate(-23deg);
-  }
-  
-  /*label right-side*/
-  .card-toggle:checked ~ label.card-toggle-label {
-	left: 17%;
-  }
-  
-  .card-toggle:checked ~ label.card-toggle-label:hover {
-	left: 15%;
-  }
-  
-  .card-toggle:checked ~ label.card-toggle-label::before {
-	transform: translate(-60%, calc(-50% - 8px)) rotate(-40deg);
-  }
-  
-  .card-toggle:checked ~ label.card-toggle-label::after {
-	transform: translate(-60%, calc(-50% + 8px)) rotate(40deg);
-  }
-  
-  .card-toggle:checked ~ label.card-toggle-label:hover::before {
-	transform: translate(-60%, calc(-50% - 5px)) rotate(-23deg);
-  }
-  
-  .card-toggle:checked ~ label.card-toggle-label:hover::after {
-	transform: translate(-60%, calc(-50% + 5px)) rotate(23deg);
-  }
-  
-  /*background left-side*/
-  .card-image {
+
+#root .Navbar {
+  grid-row : 1 / 2 ;
+  grid-column : 1 / 13 ;
+}
+
+#root .Header {
+  grid-row : 2 / 3 ;
+  grid-column : 1 / 13 ;
+}
+
+#root .Main {
+  grid-row : 3 / 4 ;
+  grid-column : 1 / 13 ;
+}
+
+#root .Footer {
+  grid-row : 4 / 5 ;
+  grid-column : 1 / 13 ;
+	
+  background-color: #221f1fcc;
 	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 0;
-	background-size: cover;
-	background-position: 0% 50%;
-	transition: all 0.5s ease;
-	opacity: 0.5;
-  }
-  
-  #card-1 .card-image {
-	background-image: url(https://www.travelawaits.com/wp-content/uploads/2021/04/8bc0f2eae5936cbcc5142f867c4fd8bc0f2-scaled.jpg);
-  }
-  
-  #card-2 .card-image {
-	background-image: url(https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iM.Sc9dD.RMQ/v2/-1x-1.jpg);
-  }
-  
-  #card-3 .card-image {
-	background-image: url(https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/max_1300x1300/public/fotos/japon_tokio_montefuji_shutterstock_756354574_sean_pavone_shutterstock.jpg?itok=3nrPOQvT);
-  }
-  #card-4 .card-image {
-	background-image: url(https://elviajerofeliz.com/wp-content/uploads/2020/04/10-Ciudades-de-Italia.-Imprescindibles.jpg);
-  }
-  
-  #card-5 .card-image {
-	background-image: url(https://wp.growproexperience.com/wp-content/uploads/2022/06/Safaris-en-Suda%CC%81frica.jpg);
-  }
-  
-  #card-6 .card-image {
-	background-image: url(https://www.noruegatours.com/wp-content/uploads/2022/11/cosas-tipicas-de-noruega-3.jpeg);
-  }
-  
-  
-  .card:hover .card-image {
-	opacity: 1;
-  }
-  
-  label.card-toggle-label:hover + .card-image {
-	transition: all 2.5s ease;
-	background-position: 10% 50%;
-  }
-  
-  /*background right-side*/
-  .card-toggle:checked ~ .card-image {
-	background-position: 100% 50%;
-  }
-  
-  .card-toggle:checked ~ label.card-toggle-label:hover + .card-image {
-	transition: all 2.5s ease;
-	background-position: 90% 50%;
-  }
-  
-  /*card header*/
-  .card-header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 100px;
-	background: #00000099;
-	border-bottom: 1px solid #ffffff66;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	backdrop-filter: blur(4px);
-	opacity: 1;
-	transition: all 0.5s ease-in-out;
-  }
-  
-  .card-header h2 {
-	color: #f0f0f0f0;
-	font-weight: 700;
-	line-height: 0.8em;
-	font-size: 1.5rem;
-	text-align: center;
-  }
-  
-  /*card content*/
-  .card-content {
-	position: absolute;
-	width: 300px;
-	height: 400px;
-	top: 100px;
-	padding: 0em;
-	transition: all 0.25s ease-in-out;
-  }
-  
-  .card-content a {
-	display: inline-block;
-	padding: 5px 10px;
-	text-transform: uppercase;
-	color: #f0f0f0;
-	font-weight: 300;
-	text-decoration: none;
-	background: #00000033;
-	backdrop-filter: blur(4px);
-	border-radius: 6px;
-	border: 1px solid #ffffff33;
-	background-color: #00000066;
-	margin: 30px 10px;
-	transition: all 0.25s;
-  }
-  
-  .card-content a:hover {
-	border: 1px solid #ffffffcc;
-	background-color: #ffcc7033;
-  }
-  
-  .card-content h3 {
-	font-size: 1.5em;
-	font-weight: 700;
-	line-height: 1.15em;
-	margin-bottom: 1.15em;
-  }
-  
-  .card-content p {
-	margin-bottom: 1.15em;
-  }
-  
-  .card-content.left-content h3,
-  .card-content.left-content p {
-	margin-right: 30%;
-	color: whitesmoke;
-  }
-  
-  .card-content.right-content h3,
-  .card-content.right-content p {
-	margin-right: 2%;
-	margin-left: 30%;
-	color: whitesmoke;
-  }
-  
-  /*card-content left-side*/
-  .card-content.left-content {
-	opacity: 1;
-	left: 0;
-	background-image: linear-gradient(to right, #000000aa, #00000000);
-	transition-delay: 0.25s;
-  }
-  
-  .card-content.right-content {
-	opacity: 0;
-	text-align: right;
-	left: 300px;
-	background-image: linear-gradient(to left, #000000aa, #00000000);
-	transition-delay: 0s;
-  }
-  
-  /*card content right-side*/
-  .card-toggle:checked ~ .card-content.left-content {
-	opacity: 0;
-	left: -300px;
-	transition-delay: 0s;
-  }
-  
-  .card-toggle:checked ~ .card-content.right-content {
-	opacity: 1;
-	left: 0px;
-	transition-delay: 0.25s;
-  }
-  
-  /*card footer*/
-  .card-footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100px;
-	background: #00000099;
-	backdrop-filter: blur(4px);
-	border-top: 1px solid #ffffff66;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	opacity: 1;
-	transition: all 0.5s ease-in-out;
-  }
-  
-  .card-footer span {
-	display: block;
-	padding: 10px 20px;
-	text-transform: uppercase;
-	color: #ffffff;
-	border: 1px solid #ffffff33;
-	background-color: #ffcc7099;
-	text-decoration: none;
-	border-radius: 8px;
-	transition: all 0.25s ease-in-out;
-  }
-  
-
-  
-  
-  /*label open card*/
-  label.open-card-label {
-	display: block;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	transform: translate(-50%, -50%);
-	z-index: 999;
-  }
-  
-  input.open-card:checked + label.open-card-label {
-	top: 50%;
-	right: 50%;
-	transform: translate(-50%, -50%);
-  }
-  
-  label.open-card-label::before {
-	content: "X";
-	display: block;
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	line-height: 30px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 1002;
-	border-radius: 50%;
-	border: 1px solid #ffffff33;
-	background: #f4e5e566;
-	backdrop-filter: blur(4px);
-	transition: all 0.25s ease-in-out;
-	cursor: pointer;
-	border-top-left-radius: 0%;
-	border-bottom-right-radius: 0%;
-  }
-  
-  label.open-card-label::after {
-	content: "";
-	display: block;
-	position: absolute;
-	width: 0px;
-	height: 0px;
-	background: #00000066;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 1001;
-	border-radius: 50%;
-	backdrop-filter: blur(4px);
-	transition: all 0.5s ease-in-out;
-	pointer-events: none;
 }
-  /* Desactivar el efecto en dispositivos móviles */
-@media (max-width: 768px) {
-    label.open-card-label::after {
-        display: none;  
-    }
-}
-  label.open-card-label:hover::after {
-	width: 1250px;
-	height: 1250px;
-  }
-  
-  input.open-card:checked + label.open-card-label::before {
-	content: attr(data-open-label);
-	width: 90px;
-	height: 90px;
-	text-align: center;
-	line-height: 90px;
-	overflow: hidden;
-	transition-delay: 0;
-	border-top-left-radius: 50%;
-	border-bottom-right-radius: 50%;
-  }
-  
-  input.open-card:checked ~ label.open-card-label:hover::before {
-	width: 100px;
-	height: 100px;
-	line-height: 100px;
-  }
-  
-  input.open-card:checked ~ label.open-card-label::after {
-	background: #00000000;
-  }
-  
-  input.open-card:checked ~ label.card-toggle-label {
-	opacity: 0;
-	left: 120%;
-  }
-  
-  /*background open-card*/
-  input.open-card:checked ~ .card-image {
-	background-position: 50% 50%;
-	opacity: 1;
-  }
-  
-  /*card-header open-card
-  input.open-card:checked ~ .card-header {
-	opacity: 0;
-	top: -100px;
-  }
-  
-  
-  /*card-content open-card*/
-  input.open-card:checked ~ .card-content {
-	opacity: 0;
-  }
-  
-  input.open-card:checked ~ .card-content.left-content {
-	left: -300px;
-	transition-delay: 0s;
-  }
-  
-  input.open-card:checked ~ .card-content.right-content {
-	left: 300px;
-	transition-delay: 0s;
-  }
-  
-  /*card-footer open-card*/
-  input.open-card:checked ~ .card-footer {
-	opacity: 0;
-	bottom: -100px;
-  }
-  
 
-  .p1{
-	color: white;
+/* MediaQuery Configs */
+/* Laptops */
+@media screen and ( max-width : 1024px ) {
+  #root {
+    grid-template-columns : repeat( 8 , 1fr ) ;
   }
+
+  :is( .Navbar , .Main ){
+    margin : 0 1rem ;
+  }
+}
+
+/* Tablets */
+@media screen and ( max-width : 768px ) {
+  #root {
+    grid-template-columns : repeat( 6 , 1fr ) ;
+  }
+
+  :is( .Navbar , .Main ){
+    margin : 0 .5rem ;
+  }
+}
+
+/* Phones */
+@media screen and ( max-width : 576px ) {
+  #root {
+    grid-template-columns : repeat( 4 , 1fr ) ;
+  }
+
+  :is( .Navbar , .Main ){
+    margin : 0 .5rem ;
+  }
+}

@@ -1,5 +1,8 @@
 import React from 'react';
 
+import '../styles/Card.css' ;
+import '../styles/CardSlider.css' ;
+
 const Card = ({ headerImage, tagColor, tagText, title, description, userName, timeAgo }) => (
   <div className="card1">
     <div className="card__header1">

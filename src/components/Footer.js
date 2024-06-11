@@ -1,10 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import '../styles/Footer.css' ;
+
 
 const Footer = () => {
   return (
-    <footer className="footer text-center py-3">
+    <footer className="Footer">
       <p className='p1'>© 2024 Epic Escape. Todos los derechos reservados.Stefany Albarrán</p>
     </footer>
   );
